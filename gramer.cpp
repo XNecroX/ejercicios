@@ -9,7 +9,7 @@ float x3,y3,z3,re3;
 float deter,v;
 void proceso();
 
-string separador = "««««««««««««««««««««";
+string separador = "----------------------";
 
 void  proceso()
 {
@@ -50,13 +50,13 @@ void  proceso()
 	deter = x*y2*z3+x2*y3*z+x3*y*z2-z*y2*x3-z2*y3*x-z3*y*x2;
 	cout<<"determinantes: "<<deter<<endl;
 
-	v = (re*y2*z3+re2*y3*z+re3*y*z2-z*y2*re3-z2*y3*re-z3*y*re2)/deter;
+	v = ((re*y2*z3+re2*y3*z+re3*y*z2)-(z*y2*re3+z2*y3*re+z3*y*re2))/deter;
 	cout<<"El valor de X es: "<<v<<endl;
 
-	v = (x*re2*z3+x2*re3*z+x3*re*z2-z*re2*x3-z2*re3*x-z3*re*x2)/deter;
+	v = ((x*re2*z3+x2*re3*z+x3*re*z2)-(z*re2*x3+z2*re3*x+z3*re*x2))/deter;
 	cout<<"El valor de Y: "<<v<<endl;
 
-	v = (x*y2*re3+x2*y3*re-x3*y*re2-re*y2*x3-re2*y3*x-re3*y*x2)/deter;
+	v = ((x*y2*re3+y*re2*x3+re*x2*y3)-(x3*y2*re+y3*re2*x+re3*x2*y))/deter;
 	cout<<"El valor de Z: "<<v<<endl;
 
 }
